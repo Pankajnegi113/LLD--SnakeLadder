@@ -15,6 +15,12 @@ public class StartGame {
 
         Board board = new Board(size);
 
+        for(int i=0;i<size;i++){
+            for(int j=0;j<size;j++){
+                board.getCells()[i][j]= new Cell(new Jump());
+            }
+        }
+
         System.out.print("Enter no of Snakes for the board: ");
         int noOfSnakes = s.nextInt();
 
@@ -56,11 +62,12 @@ public class StartGame {
         Deque<Player> players = new LinkedList<>();
         while(noOfPlayers>0){
             System.out.print("Enter player name: ");
-            String playerName = s.nextLine();
+            String playerName = s.next();
             System.out.print("Choose your favourite piece color: ");
-            String pieceColor = s.nextLine();
+            String pieceColor = s.next();
             Player player = new Player(playerName,pieceColor,0);
             players.add(player);
+            noOfPlayers--;
         }
         return players;
 

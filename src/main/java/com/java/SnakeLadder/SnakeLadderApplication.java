@@ -25,10 +25,6 @@ public class SnakeLadderApplication {
 		Deque<Player> players = StartGame.playerInput();
 		StartGame.startGame(board,players,dice);
 
-
-
-
-
 	}
 
 }
